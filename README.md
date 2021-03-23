@@ -5,8 +5,7 @@ Practice with responsive web design.
 ## Projects
 
 - Project 1 - Foods - COMPLETE
-- Project 2 - Creative Design - WORKING ON
-
+- Project 2 - Creative Design - COMPLETE
 - Project 3 - Business Agency Website
 - Project 4 - Apple E-Commerce
 - Project 5 - Personal Portfolio
