@@ -1,29 +1,31 @@
-/* COMMON STYLES */
+/* Common Styles */
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
   outline: none;
   text-decoration: none;
   list-style-type: none;
+  /* font-family: "Notateble"; */
   font-family: "Baloo Da 2";
 }
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
-/* END OF COMMONE STYLES */
+/* End of Common Styles */
 
-/* NAVBAR */
-
+/* Navbar */
 .navbar {
   width: 100%;
   height: 8rem;
   background-color: rgba(0, 0, 0, 0.9);
   position: fixed;
-  top: 0;
-  z-index: 10;
+  top: -8rem;
   padding: 3rem;
+  z-index: 10;
+  animation: animateNavbar 1s 0.5s forwards;
   transition: height 0.5s;
 }
 
@@ -31,67 +33,40 @@ html {
   height: 100vh;
 }
 
-.logo {
+@keyframes animateNavbar {
+  0% {
+    top: -8rem;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.navbar-logo {
   position: absolute;
   top: 1.5rem;
   left: 4rem;
 }
 
-.logo a {
+.navbar-logo a {
   font-family: "Notable", sans-serif;
   font-size: 2.5rem;
   color: #eee;
   letter-spacing: 0.1rem;
 }
 
-.logo span {
-  font-family: "Notable", sans-serif;
+.navbar-logo span {
   font-size: 3.5rem;
   font-weight: bold;
   color: #9e0e09;
-}
-.nav-link {
   font-family: "Notable", sans-serif;
-  color: #fff;
-  font-size: 3.5rem;
-  letter-spacing: 0.3rem;
-  margin: 2rem 0;
-  transition: color 0.9s;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.2s;
 }
-
-.nav-link:hover {
-  color: #9e0e09;
-}
-
-.nav-list {
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  transform: translate(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.change .nav-list {
-  opacity: 1;
-  visibility: visible;
-  transition: all 0.7s 0.5s;
-}
-
-/* END OF NAVBAR */
-
-/* MENU */
 
 .menu {
   width: 4rem;
   height: 4rem;
-  /* background-color: #eee; */
   position: fixed;
-  z-index: 100;
+  z-index: 500;
   top: 2rem;
   right: 4rem;
   display: flex;
@@ -104,6 +79,7 @@ html {
   width: 100%;
   height: 0.2rem;
   background-color: #eee;
+  transition: transform 0.3s;
 }
 
 .line-1 {
@@ -114,28 +90,70 @@ html {
   width: 50%;
   margin-left: auto;
 }
-/* END of MENU */
 
-/* SECTION 1 */
+.change .line-1 {
+  transform: translate(100%, 1rem) rotate(-35deg);
+  transform-origin: right;
+}
+
+.change .line-3 {
+  transform: translateY(-1rem) rotate(35deg);
+  transform-origin: right;
+}
+
+.nav-list {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
+}
+
+.change .nav-list {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.7s 0.5s;
+}
+
+.nav-link {
+  font-family: "MADE Soulmaze", sans-serif;
+  font-size: 4rem;
+  letter-spacing: 0.3rem;
+  color: #fff;
+  margin: 2rem 0;
+  transition: color 0.4s;
+}
+
+.nav-link:hover {
+  color: #9e0e09;
+}
+/*  End of Navbar */
+
+/* Section 1 */
 .section-1 {
   width: 100%;
   height: 100vh;
-  background-image: url(images/dark-bg.jpeg);
+  background: url(images/dark-bg.jpeg) no-repeat;
   background-size: cover;
-  position: relative;
 }
 
 .banner {
-  width: 100%;
   position: absolute;
   top: 20%;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
+  width: 100%;
 }
+
 .banner-heading {
-  margin-bottom: 4rem;
   height: 20rem;
+  margin-bottom: 4rem;
   perspective: 50rem;
   overflow: hidden;
 }
@@ -159,12 +177,15 @@ html {
 .heading-1 {
   animation: animateHeading 12s 3s infinite;
 }
+
 .heading-2 {
   animation: animateHeading 12s 6s infinite;
 }
+
 .heading-3 {
   animation: animateHeading 12s 9s infinite;
 }
+
 .heading-4 {
   animation: animateHeading 12s 12s infinite;
 }
@@ -175,21 +196,25 @@ html {
     opacity: 0;
     letter-spacing: 3rem;
   }
+
   3% {
     transform: translateZ(0);
     opacity: 1;
     letter-spacing: 1.5rem;
   }
+
   25% {
     transform: translateZ(0);
     opacity: 1;
     letter-spacing: 1.5rem;
   }
+
   28% {
     transform: translateZ(8rem);
     opacity: 0;
     letter-spacing: 3rem;
   }
+
   100% {
     transform: translateZ(8rem);
     opacity: 0;
@@ -204,12 +229,23 @@ html {
   color: #fff;
   background-color: rgba(0, 0, 0, 0.6);
   width: 30%;
-  margin: 0 auto 4rem auto;
+  margin: 0 auto 6rem auto;
   padding: 1rem 0;
   box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, 0.5);
   opacity: 0;
   visibility: hidden;
   animation: fadeAnimation 1s 1.5s forwards;
+}
+
+@keyframes fadeAnimation {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 .banner-btn {
@@ -246,18 +282,7 @@ html {
 .banner-btn:hover::before {
   left: 100%;
 }
-
-@keyframes fadeAnimation {
-  0% {
-    opacity: 0;
-    visibility: hidden;
-  }
-  100% {
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
+/* End of Section 1 */
 /* END OF SECTION 1 */
 
 /* SECTION 2 */
