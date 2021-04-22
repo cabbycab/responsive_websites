@@ -156,4 +156,46 @@ html {
   opacity: 1;
 }
 
+.cube-wrapper {
+  perspective: 100rem;
+}
+
+.cube {
+  width: 30rem;
+  height: 55rem;
+  background-color: red;
+  transform-style: preserve-3d;
+  transform: rotateY(140deg);
+}
+
+.font-side,
+.back-side {
+  width: 100%;
+  height: 100%;
+  background-color: #fee;
+  position: absolute;
+}
+
+.front-side {
+  padding: 2.5rem;
+  transform: translateZ(5rem);
+}
+
+.font-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.back-side {
+  transform: translateZ(-5rem);
+}
+
+.back-side i {
+  font-size: 12rem;
+  color: var(--primary-color);
+  text-shadow: 0.1rem 0.1rem 0.2rem #aaa, -0.1rem -0.1rem 0.2rem #aaa;
+  transform: rotateY(180deg);
+}
+
 /* END OF SECTION 1 */
